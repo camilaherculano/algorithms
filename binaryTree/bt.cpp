@@ -38,7 +38,7 @@ class Solution {
         Node * it;
         while(!q.empty()) {
             it = q.front();
-            cout << it->data;
+            cout << it->data << " ";
             q.pop();
             
             if(it->left != NULL) q.push(it->left);
@@ -62,5 +62,7 @@ int main() {
         root = tree.insert(root, data);
     }
 
+    tree.bfs(root);
+    
     return 0;
 }
