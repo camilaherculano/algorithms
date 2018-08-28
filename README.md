@@ -14,6 +14,7 @@ The bfs function prints a single line with n integers denoting the node order in
 
 # Sample Input
 7
+
 5 8 3 4 2 1 9
 
 # Sample Output
