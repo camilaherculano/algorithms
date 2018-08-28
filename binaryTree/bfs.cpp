@@ -38,7 +38,7 @@ class Solution {
         Node * it;
         while(!q.empty()) {
             it = q.front();
-            cout << it->data << " ";
+            std::cout << it->data << " ";
             q.pop();
             
             if(it->left != NULL) q.push(it->left);
