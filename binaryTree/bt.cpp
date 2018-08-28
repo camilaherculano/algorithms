@@ -5,8 +5,8 @@ using namespace std;
 class Node {
     public:
         int data;
-        Node *left;
-        Node *right;
+        Node * left;
+        Node * right;
         Node(int d) {
             data = d;
             left = NULL;
@@ -16,11 +16,11 @@ class Node {
 
 class Solution {
     public:
-  		Node* insert(Node* root, int data) {
+  		Node * insert(Node * root, int data) {
             if(root == NULL) {
                 return new Node(data);
             } else {
-                Node* cur;
+                Node * cur;
                 if(data <= root->data) {
                     cur = insert(root->left, data);
                     root->left = cur;
@@ -33,16 +33,24 @@ class Solution {
            }
         }
 
-    void bfs(Node* current) {
-
-
+    void bfs(Node * current) {
+        queue<Node *> q; q.push(current);
+        Node * it;
+        while(!q.empty()) {
+            it = q.front();
+            cout << it->data;
+            q.pop();
+            
+            if(it->left != NULL) q.push(it->left);
+            if(it->right != NULL) q.push(it->right);
+        }
     }
 };
 
 int main() {
   
     Solution tree;
-    Node* root = NULL;
+    Node * root = NULL;
     
     int t;
     int data;
